@@ -4,7 +4,8 @@
   "description": "API REST para controle de estoque.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "init-db": "node src/db/initDb.js"
   },
   "keywords": ["API", "REST", "Node.js"],
   "author": "ana",
