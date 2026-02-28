@@ -22,15 +22,23 @@ O sistema usa SQLite. Para criar as tabelas necessárias (`usuarios`, `produtos`
    ```bash
    npm run init-db
    ```
-3. O arquivo `estoque-jp.db` será gerado automaticamente na raiz do projeto.
+3. O arquivo `estoque-jp.db` será gerado automaticamente na raiz do projeto contendo 20 produtos (alguns estrategicamente com estoque baixo) e 5 movimentações de exemplo.
 
 #### Credenciais geradas automaticamente
-- **Usuário**: `admin`
-- **Senha**: `adminjp`
+Para testar os diferentes níveis de acesso, você pode usar os usuários abaixo:
+* **Perfil Admin (Acesso total)**
+  * Usuário: `admin`
+  * Senha: `adminjp`
+* **Perfil Estoquista (Gerencia produtos e movimentações)**
+  * Usuário: `edson_estoquista`
+  * Senha: `estoquejp`
+* **Perfil Consulta (Apenas leitura)**
+  * Usuário: `daniela_vendedora`
+  * Senha: `consultajp`
 ---
 
 ### Como iniciar o projeto?
-Você pode rodar o projeto localmente via Node.js ou utilizando Docker.
+Você pode rodar o projeto localmente via Node.js ou usando Docker.
 #### Opção 1: Via Node.js (Local)
 1. Instale as dependências:
    ```bash
