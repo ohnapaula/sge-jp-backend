@@ -1,0 +1,29 @@
+name: CI do Sistema de Estoque SGE-JP
+
+on:
+  push:
+    branches: [ "main", "develop" ]
+  pull_request:
+    branches: [ "main", "develop" ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout do código
+      uses: actions/checkout@v3
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '20.x'
+        cache: 'npm'
+
+    - name: Instalar dependências
+      run: npm ci
+
+    - name: Testar criação do Banco de Dados
+      run: npm run init-db
+      
+    - name: Validar inicialização da API
+      run: node src/server.js & sleep 3 && kill $!
